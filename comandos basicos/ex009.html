@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular(){
+            var txtvel = document.getElementById('txtvel')
+            var res = document.getElementById('res')
+            var vel = Number(txtvel.value)
+            res.innerHTML = `Sua velocidade é ${vel}km/h <br>`
+
+            if(vel > 60){
+                res.innerHTML += `Você ultrapassou a velocidade. Você está multado!`
+            }else if(vel < 60){
+                res.innerHTML += `Você está dentro dos limites.`
+            }else{
+                res.innerHTML += `Você está nos limites.`
+            }
+        }
+    </script>
+</body>
+</html>
+
+
